@@ -2,11 +2,11 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Message from './Message';
 import MessageList from './MessageList';
+import ChatList from './ChatList';
 
 function App() {
   const [inputText, setInputText] = useState('');
   const [messageArray, setMessageArray] = useState([]);
-  const [botMessage, setbotMessage] = useState('');
 
   const onButtonClick = () => {
     const messageText = inputText;
@@ -18,25 +18,30 @@ function App() {
   ]);
   console.log(messageArray);
   setInputText('');
+  setTimeout(() => {
+    setMessageArray(prev => [...prev, {
+      messageText: "Ваше сообщение получено!",
+      author: 'bot',
+      time: new Date().toLocaleString()
+    },])  
+  }, 2000)
   }
 
   useEffect(() => {
     if(messageArray.length > 0) {
       setTimeout(() => {
-        setbotMessage(() => [
-        {
-          botMess: "Ваше сообщение получено!",
-          author: 'bot',
-          time: new Date().toLocaleString(),  
-        },])  
+        
       }, 2000)
       
     }
-  }, [setbotMessage, messageArray])
+  }, [messageArray])
 
   return (
     <div className="App">
-      <MessageList messageArray = {messageArray} botMessage={botMessage} />
+      <div className = "appFlex">
+        <ChatList />
+        <MessageList messageArray = {messageArray} />
+      </div>
       <Message onButtonClick = {onButtonClick} inputText = {inputText}  setInputText = {setInputText} /> 
     </div>
   );

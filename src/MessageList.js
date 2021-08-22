@@ -1,22 +1,38 @@
 import PropTypes from "prop-types";
+import Card from '@material-ui/core/Card';
+import { makeStyles } from '@material-ui/core/styles';
 
-const MessageList = ({ messageArray, botMessage }) => {    
+const useStyles = makeStyles({
+    root: {
+      width: "70%",
+      display: "flex",
+      justifyContent: "center",
+    },
+})
+
+const MessageList = ({ messageArray }) => {  
+    const classes = useStyles();  
     return  (
+        <Card className={classes.root}>
             <div className="list">
-                {messageArray.map((message, i) => 
-                        <div>
-                            <div key={i}>{message.author}:{message.messageText}   {message.time}</div>
+                {messageArray.map((message, i) => {
+                    const isMessageFromBot = message.author === 'bot';
+                    return (
+                        <div className={isMessageFromBot ? "botMessage" : "userMessage"}>
+                            <div key={i}>
+                            <div className="messageAuthor">{message.author}</div>
+                            <div className="messageText">{message.messageText}</div>
+                            <div className="messageDate">{message.time}</div></div>
                         </div>
-                )},
-                {botMessage.map((messageBot, i) => 
-                        <div key={i}>{messageBot.author}:{messageBot.botMess}   {messageBot.time}</div>
-                )}
+                    );
+                })}
             </div>
-            )
+        </Card>
+    )
 };
 
 MessageList.propTypes = {
-    messageArray: PropTypes.object.isRequired,
+    messageArray: PropTypes.array.isRequired,
 };
 
 export default MessageList;
