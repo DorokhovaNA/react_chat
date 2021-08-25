@@ -1,9 +1,4 @@
-.App {
-  background-color: rgb(219, 215, 219);
-  text-align: center;
-  margin: 0;
-  padding: 50px 0;
-}
+
 
 .appFlex {
   display: flex;
@@ -11,84 +6,7 @@
   padding-left: 20px;
 }
 
-.title {
-  font: 700 14px/25px sans-serif;
-  color: #431147;
-  margin: 0 0 10px;
-  padding: 0;
-}
-
-.input__name {
-  width: 140px;
-  height: 17px;
-  font: 400 11px/15px sans-serif;
-  outline: transparent;
-  color: #431147;
-  border: 1px solid #891e91;
-  border-radius: 5px;
-  padding: 1px 3px;
-  margin-bottom: 15px;
-}
-
-.input__text {
-  width: 180px;
-  height: 80px;
-  font: 400 11px/15px sans-serif;
-  outline: transparent;
-  color: #431147;
-  border: 1px solid #891e91;
-  border-radius: 5px;
-  padding: 4px 3px;
-  align-items: flex-start;
-  margin-bottom: 15px;
-}
-
-.button {
-  width: 140px;
-  height: 27px;
-  font: 800 11px/15px sans-serif;
-  color: #431147;
-  border: 1px solid #891e91;
-  border-radius: 5px;
-  background-color: #e9e6e7;
-  transition: all 0.5s ease-in-out;
-}
-
-.button:hover {
-  background-color: #431147;
-  color: #e9e6e7;
-  opacity: 0.5; 
-}
-
-.list {
-  height: 60vh;
-  width: 100%;
-  background: #ffffff;
-  padding: 9px;
-}
-
-.botMessage {
-  color: red;
-  text-align: left;
-}
-
-.userMessage {
-  text-align: right;
-}
-
-.messageDate {
-  font: 700 9px/10px sans-serif;
-}
-
-.messageAuthor {
-  color: #968d90;
-  font: 700 9px/10px sans-serif;
-}
-
-.messageText {
-  font: 700 12px/15px sans-serif;
-}
-
-.chatItem {
-  display: block !important;
+.AppBar {
+  position: static;
+  background-color: rgb(37, 35, 35);
 }

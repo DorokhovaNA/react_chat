@@ -1,50 +1,29 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './App.css';
-import Message from './Message';
-import MessageList from './MessageList';
-import ChatList from './ChatList';
+import './AppBar/AppBar.css'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Chat from './Chat/Chat';
+import Users from './Users/Users';
+import Home from './Home/Home';
+import AppBar from './AppBar/AppBar';
 
-function App() {
-  const [inputText, setInputText] = useState('');
-  const [messageArray, setMessageArray] = useState([]);
-
-  const onButtonClick = () => {
-    const messageText = inputText;
-    setMessageArray(prev => [...prev, {
-      messageText,
-      author: 'me',
-      time: new Date().toLocaleString()
-    },  
-  ]);
-  console.log(messageArray);
-  setInputText('');
-  setTimeout(() => {
-    setMessageArray(prev => [...prev, {
-      messageText: "Ваше сообщение получено!",
-      author: 'bot',
-      time: new Date().toLocaleString()
-    },])  
-  }, 2000)
-  }
-
-  useEffect(() => {
-    if(messageArray.length > 0) {
-      setTimeout(() => {
-        
-      }, 2000)
-      
-    }
-  }, [messageArray])
-
-  return (
-    <div className="App">
-      <div className = "appFlex">
-        <ChatList />
-        <MessageList messageArray = {messageArray} />
-      </div>
-      <Message onButtonClick = {onButtonClick} inputText = {inputText}  setInputText = {setInputText} /> 
-    </div>
-  );
+const App = () => {
+    return (
+        <Router>
+            <AppBar />
+            <Switch>
+            <Route path="/chat">
+                <Chat />
+            </Route>
+            <Route path="/users">
+                <Users />
+            </Route>
+            <Route path="/">
+                <Home />
+            </Route>
+            </Switch>
+        </Router>
+    )
 }
 
 export default App;

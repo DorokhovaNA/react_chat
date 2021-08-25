@@ -1,0 +1,10 @@
+.AppBar {
+    position: static !important;
+    background-color: rgb(37, 35, 35) !important;
+}
+
+.link {
+    margin-right: 15px;
+    text-decoration: none;
+    color: white;
+}
