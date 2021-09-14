@@ -17,13 +17,15 @@ const useStyles = makeStyles({
 
 const MessageList = ({ messageArray }) => {  
     const classes = useStyles();
-    const { myId } = useSelector((state) => state.chat); 
+    const { myId } = useSelector((state) => state.chat);  
     return  (
       //  <Card className={classes.root}>
             <div className="list">
                 {messageArray.map((message, i) => (
+                    
                     <div
                     key={i}
+                    
                     className={`
                       ${
                         message.userId === myId
@@ -31,7 +33,11 @@ const MessageList = ({ messageArray }) => {
                           : "senderMessage"
                       } ${"message"}`}
                     >
-                    {message.text}
+                      <div className="messageAuthor">{message.userId}</div>
+                      <hr/>
+                      <div className="messageText">{message.text}</div>
+                      <div className="messageDate">{message.lastUpdate}</div>
+                    
                   </div>
                 ))}
             </div>

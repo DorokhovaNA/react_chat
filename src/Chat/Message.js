@@ -16,10 +16,11 @@ const Message = ({onButtonClick }) => {
     }
     
     return  (
-            <div>
-                <h5 className="title"> введите ваше сообщение</h5>
+            <div className="input__block">
                 <TextField id="standard-multiline-static"
+                variant="outlined"
                 multiline
+                fullWidth
                 rows={3}
                 value={inputText}
                 onChange={e => setInputText(e.target.value)} 
@@ -31,7 +32,7 @@ const Message = ({onButtonClick }) => {
                 }}
                 className="input__text" type="text" placeholder='Ваше сообщение' />
                 <br></br>
-                <Button variant="contained" color="primary" onClick= {sendMessage} type="submit" className="button">Отправить</Button>
+                <Button variant="contained" onClick= {sendMessage} type="submit" className="button">Отправить</Button>
             </div>
             )
 };

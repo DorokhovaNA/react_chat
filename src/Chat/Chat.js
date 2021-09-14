@@ -6,32 +6,29 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addMessage } from './ChatSlice';
 import { useParams } from "react-router-dom";
 
-const OnSendMessageWithThunk = (message, userId) => (dispatch, getState) => {
+const OnSendMessageWithThunk = (message) => (dispatch, getState) => {
   const { chat } = getState();
   const myId = chat.myId;
   dispatch(addMessage(message))
-  if(userId === myId) {
+  if(message.userId === myId) {
     const botMessage = {
       chatId: message.chatId,
       messageText: "Ваше сообщение получено!",
-      userId: message.chatId
-    }
+      userId: message.chatId,
+    };
     setTimeout(() => dispatch(addMessage(botMessage)), 2000);
   }
-}
+};
 
 function Chat() {
   const urlParams = useParams();
   const chatId = Number.parseInt(urlParams.id);
-  const { chats } = useSelector((state) => state.chat);
+  //const { chats } = useSelector((state) => state.chat);
   
   const messageArray = useSelector((state) => state.chat.messageArray[chatId]);
   const myId = useSelector((state) => state.chat.myId);
   const dispatch = useDispatch();
-
-  
-
-  const onButtonClick = ({messageText}) => {
+  const onButtonClick = (messageText) => {
     dispatch(OnSendMessageWithThunk({
       chatId,
       messageText,
@@ -40,19 +37,18 @@ function Chat() {
     console.log(messageArray);
   }
 
-  useEffect(() => {
-    if(messageArray.length > 0) {
-      setTimeout(() => {
-        console.log("Ваше сообщение получено!");
-      }, 2000)
+  // useEffect(() => {
+  //   if(messageArray.length > 0) {
+  //     setTimeout(() => {
+  //       console.log("Ваше сообщение получено!");
+  //     }, 2000)
       
-    }
-  }, [messageArray])
+  //   }
+  // }, [messageArray])
 
   return (
     <div className="appWrapper">
       <div className = "appFlex">
-        
         <MessageList messageArray = {messageArray} />
       </div>
       <Message onButtonClick = {onButtonClick} /> 

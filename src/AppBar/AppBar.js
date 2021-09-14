@@ -69,11 +69,6 @@ const AppBar = () => {
                     <Link to="/" className="link">Home</Link> 
                 </MenuItem>    
                 <MenuItem 
-                    key={2} 
-                >
-                    <Link to="/chat" className="link">Chat</Link> 
-                </MenuItem>
-                <MenuItem 
                     key={3} 
                 >
                     <Link to="/users" className="link">Users</Link>

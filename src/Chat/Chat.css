@@ -5,11 +5,11 @@
     padding: 10px 0 20px;
 }
 
-.title {
-    font: 700 14px/25px sans-serif;
-    color: #431147;
-    margin: 0 0 10px;
-    padding: 0;
+.input__block {
+    display: flex;
+    justify-content: end;
+    width: 60%;
+    margin: 30px 11px 14px 35%;
 }
 
 .input__name {
@@ -22,15 +22,15 @@
 }
 
 .input__text {
-    width: 180px;
-    height: 80px;
     font: 400 11px/15px sans-serif;
     border: 1px solid #968d90;
     outline: transparent;
     border-radius: 5px;
     padding: 4px 3px;
     align-items: flex-start;
-    margin-bottom: 15px;
+    margin-right: 4% !important;
+    background-color: #eeeeee;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
 }
 
 .button {
@@ -46,48 +46,55 @@
 .list {
     height: 60vh;
     width: 90%;
-    background: #ffffff;
+    background: no-repeat url(img/wallpaper.jpg);
+    background-position-y: bottom;
     padding: 9px;
     display: flex;
     flex-direction: column;
     overflow: auto;
-}
-
-.botMessage {
-    color: red;
-    text-align: left;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 3px rgb(0 0 0 / 52%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
 }
 
 .senderMessage {
     align-self: flex-start;
-    font: 700 9px/10px sans-serif;
+    text-align: left;
+    color: #611e27;
 }
 
 .userMessage {
     align-self: flex-end;
-    color:  darkred;
-    font: 700 9px/10px sans-serif;
+    color:  #4e349c;
 }
 
 .message {
-    background-color: #A1A1A1;
-    padding: 5px;
-    margin: 10px 5px;
-    border-radius: 30px;
+    background-color: #e0e6d1;
+    margin: 4px 5px;
+    padding: 4px 8px;
+    border-radius: 15px;
     width: 25%;
-    color: #222;
+    font: 700 11px/13px sans-serif;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 58%), 0px 2px 2px 0px rgb(0 0 0 / 27%), 0px 1px 5px 0px rgb(0 0 0 / 29%);
 }
 
 .userMessage {
     text-align: right;
 }
 
+.messageAuthor {
+    color: #555153;
+    font: 400 8px/10px sans-serif;
+    padding: 2px;
+}
+
 .messageDate {
-    font: 700 9px/10px sans-serif;
+    color: #555153;
+    font: 400 9px/10px sans-serif;
 }
 
 .messageText {
-    font: 700 12px/15px sans-serif;
+    padding: 3px 2px;
+    word-break: break-word;
 }
 
 .chatItem {

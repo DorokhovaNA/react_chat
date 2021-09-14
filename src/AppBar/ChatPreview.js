@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 
 const ChatPreview = ({messageArray, user}) => {
 	const history = useHistory();
-
   	const { name, id } = user;
 	
 	const lastMessage =
@@ -18,19 +17,19 @@ const ChatPreview = ({messageArray, user}) => {
 	  return acc;
 	}, 0);  
 	return (
-		<Box>
+		<Box className="chatBox">
 			<Box className="chatWrapper"
 				onClick={() => history.push(`/chat/${id}`)}
 			>
-				<Typography>{name}</Typography>
-				<Typography>{lastMessage.text}</Typography>
+				<Typography variant="subtitle2">{name}</Typography>
+				<Typography variant="caption">{lastMessage.text}</Typography>
 			</Box>
-			<Box>
+			<Box className="chatInfo">
 				<Typography variant="caption">
 					{lastMessage.lastUpdate}
 				</Typography>
 				<Typography variant="subtitle1">
-					{unreadMessagesCount > 0 && unreadMessagesCount}
+					<h6 className="countMsg">{unreadMessagesCount > 0 && unreadMessagesCount}</h6>
 				</Typography>
 			</Box>
 		</Box>
