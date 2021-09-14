@@ -9,18 +9,19 @@ import AppBar from './AppBar/AppBar';
 
 const App = () => {
     return (
+        
         <Router>
             <AppBar />
             <Switch>
-            <Route path="/chat">
-                <Chat />
-            </Route>
-            <Route path="/users">
-                <Users />
-            </Route>
-            <Route path="/">
-                <Home />
-            </Route>
+                <Route path="/chat/:id">
+                    <Chat />
+                </Route>
+                <Route path="/users">
+                    <Users />
+                </Route>
+                <Route path="/">
+                    <Home />
+                </Route>
             </Switch>
         </Router>
     )

@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
 import './Chat.css';
+import { useSelector } from "react-redux";
+
 
 const useStyles = makeStyles({
     root: {
@@ -9,32 +11,37 @@ const useStyles = makeStyles({
       display: "flex",
       justifyContent: "center",
     },
+
+    
 })
 
 const MessageList = ({ messageArray }) => {  
-    const classes = useStyles();  
+    const classes = useStyles();
+    const { myId } = useSelector((state) => state.chat); 
     return  (
-        <Card className={classes.root}>
+      //  <Card className={classes.root}>
             <div className="list">
-                {messageArray.map((message, i) => {
-                    const isMessageFromBot = message.author === 'bot';
-                    return (
-                        <div className={isMessageFromBot ? "botMessage" : "userMessage"}>
-                            <div key={i}>
-                            <div className="messageAuthor">{message.author}</div>
-                            <div className="messageText">{message.messageText}</div>
-                            <div className="messageDate">{message.time}</div></div>
-                        </div>
-                    );
-                })}
+                {messageArray.map((message, i) => (
+                    <div
+                    key={i}
+                    className={`
+                      ${
+                        message.userId === myId
+                          ? "userMessage"
+                          : "senderMessage"
+                      } ${"message"}`}
+                    >
+                    {message.text}
+                  </div>
+                ))}
             </div>
-        </Card>
+      //  </Card>
     )
 };
 
-MessageList.propTypes = {
-    messageArray: PropTypes.array.isRequired,
-};
+// MessageList.propTypes = {
+//     messageArray: PropTypes.array.isRequired,
+// };
 
 export default MessageList;
 
