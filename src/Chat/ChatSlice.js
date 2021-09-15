@@ -1,21 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
-import moment from "moment";
 
 export const ChatSlice = createSlice({
-    name: 'chat',
+    name: "chat",
     initialState: {
         messageArray: {
           2: [
             {
                 lastUpdate: new Date().toLocaleString(),
                 userId: 1,
-                text: 'Hi',
+                text: "Hi",
                 isRead: true,
             },
             {
                 lastUpdate: new Date().toLocaleString(),
                 userId: 3,
-                text: 'How are U?',
+                text: "How are U?",
                 isRead: false,
             },
           ],
@@ -23,19 +22,19 @@ export const ChatSlice = createSlice({
             {
                 lastUpdate: new Date().toLocaleString(),
                 userId: 2,
-                text: 'Have you made your notes yet?',
+                text: "Have you made your notes yet?",
                 isRead: true,
             },
             {
                 lastUpdate: new Date().toLocaleString(),
                 userId: 1,
-                text: 'Yes, I have',
+                text: "Yes, I have",
                 isRead: false,
             },
             {
                 lastUpdate: new Date().toLocaleString(),
                 userId: 1,
-                text: 'Yes, I have',
+                text: "Yes, I have",
                 isRead: false,
             },
           ],
@@ -56,15 +55,7 @@ export const ChatSlice = createSlice({
     reducers: {
         addMessage: (state, action) => {
             const { chatId, messageText, userId } = action.payload;
-            // const chatIndex = state.chats.findIndex((chat) => chat.id === chatId);
-            // const chat = state.chats[chatIndex];
-      
-            // console.log(chat);
-      
-            // const newChats = [...state.chats];
-      
-            // newChats.splice(chatIndex, 1);
-      
+           
             state.messageArray = {
                 ...state.messageArray,
                 [chatId]: [

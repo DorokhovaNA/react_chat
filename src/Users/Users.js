@@ -1,14 +1,14 @@
-import './Users.css'
-import React  from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import { useSelector, useDispatch } from 'react-redux';
-import { yourName, yourMail } from './UsersSlice.js'
+import React  from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import { yourName, yourMail } from "./UsersSlice.js";
+import "./Users.css";
 
 const Users = () => {
     const [open, setOpen] = React.useState(false);
@@ -18,11 +18,11 @@ const Users = () => {
     const dispatch = useDispatch();
 
     const handleChangeName = (event) => {
-        dispatch(yourName(event.target.value || ''));
+        dispatch(yourName(event.target.value || ""));
     };
 
     const handleChangeMail = (event) => {
-        dispatch(yourMail(Number(event.target.value) || ''));
+        dispatch(yourMail(Number(event.target.value) || ""));
     };
 
     const handleClickOpen = () => {

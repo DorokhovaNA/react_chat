@@ -1,0 +1,29 @@
+.weatherWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	width: 76vw;
+	margin: 10px 0 10px 24vw;
+	height: 90vh;
+	align-items: center;
+}
+
+.errorTable {
+	font: 700 16px/20px helvetica, sans-serif;
+	color: red;
+}
+
+.forecastWrapper {
+	color: rgb(96, 27, 141);
+	font: 700 20px/25px helvetica, sans-serif;
+}
+
+.forecastText {
+	font: 700 16px/20px helvetica, sans-serif;
+	margin-bottom: 35px;
+}
+
+.forecastTitle {
+	margin-bottom: 20px;
+}

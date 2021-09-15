@@ -1,18 +1,18 @@
 import { useState } from "react";
-import './AppBar.css';
-import {  useSelector } from "react-redux";
-import Drawer from '@material-ui/core/Drawer';
-import InputAdornment from "@material-ui/core/InputAdornment";
+import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import Drawer from "@material-ui/core/Drawer";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
 import TextField from "@material-ui/core/TextField";
-import SearchIcon from '@material-ui/icons/Search';
-import Menu from '@material-ui/core/Menu';
+import SearchIcon from "@material-ui/icons/Search";
+import Menu from "@material-ui/core/Menu";
 import Box from "@material-ui/core/Box";
-import MenuItem from '@material-ui/core/MenuItem';
+import MenuItem from "@material-ui/core/MenuItem";
 import ChatPreview from "./ChatPreview";
+import "./AppBar.css";
 
 const useStyles = makeStyles((theme) => ({
     input: {
@@ -67,7 +67,12 @@ const AppBar = () => {
                     key={1} 
                 >
                     <Link to="/" className="link">Home</Link> 
-                </MenuItem>    
+                </MenuItem>
+                <MenuItem 
+                    key={2} 
+                >
+                    <Link to="/weather" className="link">Weather</Link>
+                </MenuItem>     
                 <MenuItem 
                     key={3} 
                 >
@@ -91,8 +96,7 @@ const AppBar = () => {
                 {users.map((user) => (
                     <ChatPreview user={user} messageArray={messageArray[user.id]} />
                 ))}
-            </Box> 
-           
+            </Box>    
     </Drawer>
     )
 }

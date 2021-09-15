@@ -47,6 +47,7 @@
     height: 60vh;
     width: 90%;
     background: no-repeat url(img/wallpaper.jpg);
+    background-size: cover;
     background-position-y: bottom;
     padding: 9px;
     display: flex;
