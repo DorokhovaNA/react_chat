@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const ChatSlice = createSlice({
     name: "chat",
+    isAuth: false,
     initialState: {
         messageArray: {
           2: [

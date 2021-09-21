@@ -26,6 +26,16 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const routes = [
+    {
+      pathTitle: "Home",
+      path: "/",
+    },
+    { pathTitle: "Chat", path: "/chat" },
+    { pathTitle: "Users", path: "/users" },
+    { pathTitle: "Weather", path: "/weather" },
+];
+
 const AppBar = () => {
     const classes = useStyles();
     const { users, messageArray } = useSelector((state) => state.chat);
