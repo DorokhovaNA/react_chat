@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.appFlex {
+    display: flex;
+    width: 76vw;
+    margin: 0 0 0 22vw;
+    justify-content: center;
+}
+
+.App {
+    background-color: rgb(219, 215, 219);
+    text-align: center;
+    margin: 0;
+    padding: 10px 0 20px;
+}
+
