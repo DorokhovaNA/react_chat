@@ -1,20 +1,15 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { initializeApp } from "firebase/app";
-<<<<<<< Updated upstream
-import { firebaseConfig } from "./firebase";
-=======
 import firebase from "firebase/compat";
->>>>>>> Stashed changes
 import Chat from "./Chat/Chat";
 import Users from "./Users/Users";
 import Home from "./Home/Home";
 import Weather from "./Weather/Weather";
-<<<<<<< Updated upstream
-=======
+
 import Login from './Auth/Login';
 import Signup from './Auth/Signup';
->>>>>>> Stashed changes
+
 import CustomRoute from "./util/CustomRoute";
 import AppBar from "./AppBar/AppBar";
 import "./App.css";
@@ -40,27 +35,23 @@ const App = () => {
     }, [])
     return (
         <Router>
-            {/* {<AppBar />}  */}
+            <AppBar />
             <Switch>
-<<<<<<< Updated upstream
-                <CustomRoute secured path="/chat/:id">
-=======
+
                 <CustomRoute path="/chat/:id">
->>>>>>> Stashed changes
+
                     <Chat />
                 </CustomRoute>
                 <CustomRoute path="/users" secured withAppBar={true}> 
                     <Users />
                 </CustomRoute>
                 <Route path="/login">
-<<<<<<< Updated upstream
-                    <div></div>
-=======
+
                     <Login />
                 </Route>
                 <Route path="/signup">
                     <Signup />
->>>>>>> Stashed changes
+
                 </Route>
                 <Route path="/weather" secured withAppBar={true}>
                     <Weather />
