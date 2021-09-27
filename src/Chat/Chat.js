@@ -2,23 +2,24 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addMessage } from "./ChatSlice";
 import { useParams } from "react-router-dom";
+import { sendMessageWithThunk } from "./ChatActions";
 import Message from "./Message";
 import MessageList from "./MessageList";
 import "./Chat.css";
 
-const OnSendMessageWithThunk = (message) => (dispatch, getState) => {
-    const { chat } = getState();
-    const myId = chat.myId;
-    dispatch(addMessage(message))
-    if(message.userId === myId) {
-        const botMessage = {
-            chatId: message.chatId,
-            messageText: "Ваше сообщение получено!",
-            userId: message.chatId,
-        };
-        setTimeout(() => dispatch(addMessage(botMessage)), 2000);
-    }
-};
+// const OnSendMessageWithThunk = (message) => (dispatch, getState) => {
+//     const { chat } = getState();
+//     const myId = chat.myId;
+//     dispatch(addMessage(message))
+//     if(message.userId === myId) {
+//         const botMessage = {
+//             chatId: message.chatId,
+//             messageText: "Ваше сообщение получено!",
+//             userId: message.chatId,
+//         };
+//         setTimeout(() => dispatch(addMessage(botMessage)), 2000);
+//     }
+// };
 
 function Chat() {
     const urlParams = useParams();
@@ -28,7 +29,7 @@ function Chat() {
     const myId = useSelector((state) => state.chat.myId);
     const dispatch = useDispatch();
     const onButtonClick = (messageText) => {
-        dispatch(OnSendMessageWithThunk({
+        dispatch(sendMessageWithThunk({
             chatId,
             messageText,
             userId: myId,

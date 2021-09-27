@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Drawer from "@material-ui/core/Drawer";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import IconButton from "@material-ui/core/IconButton";
@@ -14,7 +14,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import ChatPreview from "./ChatPreview";
 import "./AppBar.css";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     input: {
         "& div": {
             borderRadius: "40px",
@@ -44,6 +44,7 @@ const AppBar = () => {
     //console.log(chats);
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
+    const history = useHistory();
        
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -76,17 +77,17 @@ const AppBar = () => {
                     className="menuBurg"
                     key={1} 
                 >
-                    <Link to="/" className="link">Home</Link> 
+                    <Link onClick={() => history.push("/")} className="link">Home</Link> 
                 </MenuItem>
                 <MenuItem 
                     key={2} 
                 >
-                    <Link to="/weather" className="link">Weather</Link>
+                    <Link onClick={() => history.push("/weather")} className="link">Weather</Link>
                 </MenuItem>     
                 <MenuItem 
                     key={3} 
                 >
-                    <Link to="/users" className="link">Users</Link>
+                    <Link onClick={() => history.push("/users")} className="link">Users</Link>
                 </MenuItem> 
                 </Menu>
                 <TextField 

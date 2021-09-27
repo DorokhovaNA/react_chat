@@ -6,7 +6,7 @@ const MessageList = ({ messageArray }) => {
     const { myId } = useSelector((state) => state.chat);  
     return  (
         <div className="list">
-            {messageArray.map((message, i) => (
+            {messageArray && messageArray.map((message, i) => (
                 <div
                 key={i}
                 className={`
@@ -18,7 +18,7 @@ const MessageList = ({ messageArray }) => {
                 >
                   <div className="messageAuthor">{message.userId}</div>
                   <hr/>
-                  <div className="messageText">{message.text}</div>
+                  <div className="messageText">{message.messageText}</div>
                   <div className="messageDate">{message.lastUpdate}</div>  
               </div>
             ))}

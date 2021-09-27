@@ -22,7 +22,7 @@ const ChatPreview = ({messageArray, user}) => {
 				onClick={() => history.push(`/chat/${id}`)}
 			>
 				<Typography variant="subtitle2">{name}</Typography>
-				<Typography variant="caption">{lastMessage.text}</Typography>
+				<Typography variant="caption">{lastMessage.messageText}</Typography>
 			</Box>
 			<Box className="chatInfo">
 				<Typography variant="caption">

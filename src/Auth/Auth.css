@@ -1,0 +1,95 @@
+.root {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: center;
+}
+
+.signupWrapper {
+	margin-top: 50px;
+	user-select: none;
+	width: 30%;
+    padding: 4%;
+}
+
+.signUpHeading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 25px;
+}
+
+.signUpForm {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.inputWrapper {
+	margin-bottom: 10px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.input {
+	height: 50px;
+	width: 100%;
+	outline: none;
+	font: 500 15px/20px Roboto, sans-serif;
+	padding: 5px;
+	border: 1px solid #e3dddd;
+	border-radius: 8px;
+	box-shadow: 1px 3px 2px -1px rgb(0 0 0 / 38%), 1px 3px 2px 0px rgb(0 0 0 / 17%), 2px 4px 3px 0px rgb(0 0 0 / 12%);
+	margin-bottom: 30px;
+}
+
+.buttonWrapper {
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.error {
+	margin-bottom: 10px;
+	color: #ff6e6e;
+}
+
+.logIn {
+	font-weight: 300;
+}
+
+.logInLink {
+	color: #1e88e5;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+.loginWrapper {
+	margin-top: 50px;
+	user-select: none;
+	width: 30%;
+    padding: 4%;
+}
+
+.loginHeading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 25px;
+}
+
+.brandTitle {
+	font: 300 24px/46px Roboto, sans-serif;
+}
+
+.signUp {
+	text-align: center;
+}
+
+.signUpLink {
+	color: #e51eba;
+	text-decoration: none;
+	margin: 0 auto;
+}

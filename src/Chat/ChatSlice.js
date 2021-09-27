@@ -71,6 +71,15 @@ export const ChatSlice = createSlice({
             }
         },
 
+        setMessages: (state, action) => {
+            const { chatId, messages } = action.payload;
+      
+            state.messageArray = {
+              ...state.messageArray,
+              [chatId]: messages,
+            };
+          },
+
         incrementWithoutMessage: (state) => {
             state.value += 1;
         },
@@ -78,12 +87,16 @@ export const ChatSlice = createSlice({
             state.value += 1;
             state.lastMessageText = action.payload;
         },
+
+        changeIsAuth: (state, action) => {
+            state.isAuthenticated = action.payload;
+        },
         // addMessage: (state, action) => {
         //     state.messageArray.push(action.payload); 
         // }
     }
 });
 
-export const { incrementWithMessage, incrementWithoutMessage, addMessage } = ChatSlice.actions;
+export const { incrementWithMessage, incrementWithoutMessage, addMessage, changeIsAuth, setMessages } = ChatSlice.actions;
 
 export default ChatSlice.reducer;
