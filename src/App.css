@@ -53,3 +53,12 @@
   color: #e9e6e7;
   opacity: 0.5; 
 }
+
+.list {
+  width: 30%;
+  height: 60vh;
+  background: #ffffff;
+  margin: 0 auto;
+  border: 1px solid #891e91;
+  border-radius: 5px;
+}
