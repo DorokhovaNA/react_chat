@@ -1,0 +1,103 @@
+.appWrapper {
+    background-color: rgb(219, 215, 219);
+    text-align: center;
+    margin: 0;
+    padding: 10px 0 20px;
+}
+
+.input__block {
+    display: flex;
+    justify-content: end;
+    width: 60%;
+    margin: 30px 11px 14px 35%;
+}
+
+.input__name {
+    width: 140px;
+    height: 17px;
+    font: 400 11px/15px sans-serif;
+    border-radius: 5px;
+    padding: 1px 3px;
+    margin-bottom: 15px;
+}
+
+.input__text {
+    font: 400 11px/15px sans-serif;
+    border: 1px solid #968d90;
+    outline: transparent;
+    border-radius: 5px;
+    padding: 4px 3px;
+    align-items: flex-start;
+    margin-right: 4% !important;
+    background-color: #eeeeee;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+}
+
+.button {
+    width: 140px;
+    height: 27px;
+    transition: all 0.5s ease-in-out;
+} 
+
+.button:hover {
+    opacity: 0.5; 
+}
+
+.list {
+    height: 60vh;
+    width: 90%;
+    background: no-repeat url(img/wallpaper.jpg);
+    background-size: cover;
+    background-position-y: bottom;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 3px rgb(0 0 0 / 52%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+}
+
+.senderMessage {
+    align-self: flex-start;
+    text-align: left;
+    color: #611e27;
+}
+
+.userMessage {
+    align-self: flex-end;
+    color:  #4e349c;
+}
+
+.message {
+    background-color: #e0e6d1;
+    margin: 4px 5px;
+    padding: 4px 8px;
+    border-radius: 15px;
+    width: 25%;
+    font: 700 11px/13px sans-serif;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 58%), 0px 2px 2px 0px rgb(0 0 0 / 27%), 0px 1px 5px 0px rgb(0 0 0 / 29%);
+}
+
+.userMessage {
+    text-align: right;
+}
+
+.messageAuthor {
+    color: #555153;
+    font: 400 8px/10px sans-serif;
+    padding: 2px;
+}
+
+.messageDate {
+    color: #555153;
+    font: 400 9px/10px sans-serif;
+}
+
+.messageText {
+    padding: 3px 2px;
+    word-break: break-word;
+}
+
+.chatItem {
+    display: block !important;
+}
