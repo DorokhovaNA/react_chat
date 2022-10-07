@@ -1,6 +1,11 @@
 .homePage {
     background-color: rgb(219, 215, 219);
-    text-align: center;
     margin: 0;
     padding: 50px 0;
+}
+
+.title {
+    text-align: center;
+    font-family: monospace, sans-serif;
+    color: rgb(53, 46, 53);
 }
