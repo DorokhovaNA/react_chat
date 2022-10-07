@@ -1,6 +1,6 @@
 # Chat React App by DorokhovaNA
 
-Мини-приложение для планирования задач
+Мини-приложение для общения
 ![](../master/files/Screenshot_18.png)
 
 # Функционал
