@@ -1,7 +1,7 @@
 # Chat React App by DorokhovaNA
 
 Мини-приложение для общения
-![](../master/files/Screenshot_18.png)
+![](../main/files/Screenshot_18.png)
 
 # Функционал
 
